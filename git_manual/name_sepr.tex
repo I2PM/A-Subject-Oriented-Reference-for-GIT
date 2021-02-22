@@ -1,0 +1,62 @@
+%==============================================================================
+% short introduction to get template running on WINDOWS
+% further explanation can be found in the pptx
+% can be removed after first compilation 
+%
+% install MikTeX (http://www.miktex.org) - activate auto-install of packages
+% install ActivePerl (https://www.perl.org/) - add to HOME
+% system reboot
+%
+% use command-line or IDE in admin-mode to execute the  following commands
+% in the specified order (pdflatex used because we want the PDF in the end)
+% 
+%
+% After changes in glossary you need to execute the following command 
+% to use the new acronyms
+%
+% makeglossaries ma_mustermann
+%
+% After changes in literature you need to execute the following command
+% to use the new reference
+%
+% bibtex ma_mustermann
+%
+%==============================================================================
+
+% TODO set author and title in header settings
+\input{header}
+
+\begin{document}
+
+%==============================================================================
+
+%
+% add title pages
+%
+
+\frontmatter
+\setcounter{secnumdepth}{3}
+\include{chapters/0-1_titlepage}	% TODO set author and title
+
+\tableofcontents
+%
+% add content
+%
+
+
+\mainmatter
+%\glsresetall
+\include{git_manual/chapters/1_introduction}
+\include{git_manual/chapters/2_git_basics}
+\include{git_manual/chapters/3_git_branching}
+\include{git_manual/chapters/4_git_collaborations}
+
+%
+% add appendix
+%
+
+\include{git_manual/chapters/appendix}
+
+%==============================================================================
+
+\end{document}
